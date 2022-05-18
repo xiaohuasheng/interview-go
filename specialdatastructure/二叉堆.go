@@ -1,6 +1,6 @@
 package specialdatastructure
 
-func heapSort(arr []int) {
+func heapSort2(arr []int) {
 	buildHeap(arr)
 	for i := len(arr) - 1; i > 0; i-- {
 		arr[0], arr[i] = arr[i], arr[0]
@@ -12,15 +12,15 @@ func downAdjust(arr []int, parent, length int) {
 	leftChild := parent*2 + 1
 	rightChild := parent*2 + 2
 	for leftChild < length && rightChild < length {
-		exchageIndex := leftChild
-		if arr[rightChild] < arr[leftChild] {
-			exchageIndex = rightChild
+		biggerIndex := leftChild
+		if arr[rightChild] > arr[leftChild] {
+			biggerIndex = rightChild
 		}
-		if arr[parent] <= arr[exchageIndex] {
+		if arr[parent] >= arr[biggerIndex] {
 			break
 		}
-		arr[parent], arr[exchageIndex] = arr[exchageIndex], arr[parent]
-		parent = exchageIndex
+		arr[parent], arr[biggerIndex] = arr[biggerIndex], arr[parent]
+		parent = biggerIndex
 		leftChild = parent*2 + 1
 		rightChild = parent*2 + 1
 	}
