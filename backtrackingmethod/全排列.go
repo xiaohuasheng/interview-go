@@ -28,3 +28,11 @@ func backTrack(nums []int, numsLen int, path []int) {
 // 链接：https://leetcode-cn.com/problems/permutations/solution/dai-ma-sui-xiang-lu-dai-ni-xue-tou-hui-s-mfrp/
 // 来源：力扣（LeetCode）
 // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+0000010 0101100
+0101100 0000010
+10101100 00000010
+每个字节的第一位，叫做msb（most significant bit），
+用于标识下一个字节是否还属于这个整数（1：属于；0：不属于）
+所以，最后，填充msb后，第二个字节的第一位是0，表示下一个字节不属于这个整数了
